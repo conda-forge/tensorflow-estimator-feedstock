@@ -1,4 +1,4 @@
-{% set version = "1.14.0" %}
+{% set version = "2.0.0" %}
 {% set build_number = 0 %}
 
 package:
@@ -6,34 +6,22 @@ package:
   version: {{ version }}
 
 source:
-   url: https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-{{version}}-py2.py3-none-any.whl
+   url: https://files.pythonhosted.org/packages/95/00/5e6cdf86190a70d7382d320b2b04e4ff0f8191a37d90a422a2f8ff0705bb/tensorflow_estimator-{{version}}-py2.py3-none-any.whl
    sha256: ca073f66063407a091d610ec1b22e39ea30248710198cc6f13769320bdbe3992
 
 build:
+  noarch: python
   number: {{ build_number }}
-  skip: true  # [win and py27]
   script:
     - python -m pip install --no-deps --ignore-installed ./tensorflow_estimator-{{version}}-py2.py3-none-any.whl
   
 requirements:
   build:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
-    - absl-py >=0.7.0
-    - astor >=0.6.0
-    - gast >=0.2.0
-    - numpy >=1.16.1
-    - six >=1.10.0
-    - protobuf >=3.6.1
-    - termcolor >=1.1.0
-    - wrapt >=1.11.1
-    - grpcio >=1.8.6
-    - enum34 >=1.1.6              # [py<34]
-    - backports.weakref >=1.0rc1  # [py<34]
-    - mock >=2.0.0                # [py2k]
-
+    - python >=3.5
+    - numpy  >=1.16.0, <2.0
 
 test:
   imports:
@@ -57,3 +45,4 @@ extra:
     - ghego
     - hajapy
     - dhirschfeld
+    - roccqqck
