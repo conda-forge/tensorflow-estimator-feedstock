@@ -7,7 +7,7 @@ package:
 
 source:
    url: https://files.pythonhosted.org/packages/95/00/5e6cdf86190a70d7382d320b2b04e4ff0f8191a37d90a422a2f8ff0705bb/tensorflow_estimator-{{version}}-py2.py3-none-any.whl
-   sha256: ca073f66063407a091d610ec1b22e39ea30248710198cc6f13769320bdbe3992
+   sha256: 54fdfe8712d54627579bc6d524ced43bbd57042cb2ce411bdf2ae46b29a772da
 
 build:
   noarch: python
