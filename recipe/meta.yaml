@@ -11,16 +11,16 @@ source:
 
 build:
   number: {{ build_number }}
-  skip : True  # [win or py27]
+  skip : True  # [win]
   script:
     - python -m pip install --no-deps --ignore-installed ./tensorflow_estimator-{{version}}-py2.py3-none-any.whl
   
 requirements:
   build:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - numpy  >=1.16.0, <2.0
 
 test:
