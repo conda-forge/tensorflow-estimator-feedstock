@@ -10,7 +10,6 @@ source:
    sha256: 54fdfe8712d54627579bc6d524ced43bbd57042cb2ce411bdf2ae46b29a772da
 
 build:
-  noarch: python
   number: {{ build_number }}
   script:
     - python -m pip install --no-deps --ignore-installed ./tensorflow_estimator-{{version}}-py2.py3-none-any.whl
