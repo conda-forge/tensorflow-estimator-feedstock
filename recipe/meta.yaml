@@ -32,7 +32,7 @@ requirements:
 
 test:
   imports:
-    - numpy  # NB: can't import tensorflow on CI due to glibc compat issues.  
+    - tensorflow_estimator
 
 about:
   home: https://github.com/tensorflow/estimator
