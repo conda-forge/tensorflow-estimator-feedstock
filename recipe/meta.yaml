@@ -1,19 +1,18 @@
-{% set version = "1.14.0" %}
-{% set build_number = 0 %}
+{% set version = "2.2.0" %}
 
 package:
   name: tensorflow-estimator
   version: {{ version }}
 
 source:
-   url: https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-{{version}}-py2.py3-none-any.whl
-   sha256: ca073f66063407a091d610ec1b22e39ea30248710198cc6f13769320bdbe3992
+   url: https://pypi.io/packages/py2.py3/t/tensorflow-estimator/tensorflow_estimator-{{ version }}-py2.py3-none-any.whl
+   sha256: d09dacdd127f2579cea8d5af21f4a918036b8ae246adc82f26b61f91cc247dc2
 
 build:
-  number: {{ build_number }}
-  skip: true  # [win and py27]
+  number: 0
+  noarch: python
   script:
-    - python -m pip install --no-deps --ignore-installed ./tensorflow_estimator-{{version}}-py2.py3-none-any.whl
+    - python -m pip install --no-deps --ignore-installed tensorflow_estimator-{{ version }}-py2.py3-none-any.whl
   
 requirements:
   build:
@@ -30,18 +29,15 @@ requirements:
     - termcolor >=1.1.0
     - wrapt >=1.11.1
     - grpcio >=1.8.6
-    - enum34 >=1.1.6              # [py<34]
-    - backports.weakref >=1.0rc1  # [py<34]
-    - mock >=2.0.0                # [py2k]
-
 
 test:
   imports:
-    - numpy  # NB: can't import tensorflow on CI due to glibc compat issues.  
+    # ImportError: /lib64/libc.so.6: version `GLIBC_2.17' not found
+    - numpy
 
 about:
   home: https://github.com/tensorflow/estimator
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
   summary: "TensorFlow Estimator is a high-level TensorFlow API that greatly simplifies machine learning programming."
 
@@ -56,3 +52,4 @@ extra:
     - ghego
     - hajapy
     - dhirschfeld
+    - jschueller
