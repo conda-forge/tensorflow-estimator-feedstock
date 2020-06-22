@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-   url: https://files.pythonhosted.org/packages/a4/f5/926ae53d6a226ec0fda5208e0e581cffed895ccc89e36ba76a8e60895b78/tensorflow_estimator-2.2.0-py2.py3-none-any.whl
+   url: https://pypi.io/packages/py2.py3/t/tensorflow-estimator/tensorflow_estimator-{{version}}-py2.py3-none-any.whl
    sha256: d09dacdd127f2579cea8d5af21f4a918036b8ae246adc82f26b61f91cc247dc2
 
 build:
   number: {{ build_number }}
   script:
-    - python -m pip install --no-deps --ignore-installed ./tensorflow_estimator-{{version}}-py2.py3-none-any.whl
+    - python -m pip install --no-deps --ignore-installed tensorflow_estimator-{{version}}-py2.py3-none-any.whl
   
 requirements:
   build:
@@ -32,7 +32,8 @@ requirements:
 
 test:
   imports:
-    - numpy  # NB: can't import tensorflow on CI due to glibc compat issues.  
+    # NB: can't import tensorflow on CI due to glibc compat issues.  
+    - numpy
 
 about:
   home: https://github.com/tensorflow/estimator
