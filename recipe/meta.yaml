@@ -29,11 +29,11 @@ requirements:
     - termcolor >=1.1.0
     - wrapt >=1.11.1
     - grpcio >=1.8.6
-    - tensorflow
 
 test:
   imports:
-    - tensorflow_estimator
+    # ImportError: /lib64/libc.so.6: version `GLIBC_2.17' not found
+    - numpy
 
 about:
   home: https://github.com/tensorflow/estimator
