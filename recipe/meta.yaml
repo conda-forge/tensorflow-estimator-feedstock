@@ -1,5 +1,4 @@
 {% set version = "2.2.0" %}
-{% set build_number = 0 %}
 
 package:
   name: tensorflow-estimator
@@ -10,7 +9,8 @@ source:
    sha256: d09dacdd127f2579cea8d5af21f4a918036b8ae246adc82f26b61f91cc247dc2
 
 build:
-  number: {{ build_number }}
+  number: 0
+  noarch: python
   script:
     - python -m pip install --no-deps --ignore-installed tensorflow_estimator-{{ version }}-py2.py3-none-any.whl
   
