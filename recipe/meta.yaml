@@ -29,6 +29,7 @@ requirements:
     - termcolor >=1.1.0
     - wrapt >=1.11.1
     - grpcio >=1.8.6
+    - tensorflow
 
 test:
   imports:
