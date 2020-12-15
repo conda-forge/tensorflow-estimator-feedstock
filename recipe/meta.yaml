@@ -1,21 +1,21 @@
-{% set version = "2.2.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: tensorflow-estimator
   version: {{ version }}
 
 source:
-   url: https://pypi.io/packages/py2.py3/t/tensorflow-estimator/tensorflow_estimator-{{ version }}-py2.py3-none-any.whl
-   sha256: d09dacdd127f2579cea8d5af21f4a918036b8ae246adc82f26b61f91cc247dc2
+  url: https://pypi.io/packages/py2.py3/t/tensorflow-estimator/tensorflow_estimator-{{ version }}-py2.py3-none-any.whl
+  sha256: 5b7b7bf2debe19a8794adacc43e8ba6459daa4efaf54d3302623994a359b17f0
 
 build:
   number: 0
   noarch: python
   script:
     - python -m pip install --no-deps --ignore-installed tensorflow_estimator-{{ version }}-py2.py3-none-any.whl
-  
+
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
@@ -38,8 +38,8 @@ test:
 about:
   home: https://github.com/tensorflow/estimator
   license: Apache-2.0
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: "TensorFlow Estimator is a high-level TensorFlow API that greatly simplifies machine learning programming."
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
+  summary: TensorFlow Estimator is a high-level TensorFlow API that greatly simplifies machine learning programming.
 
 extra:
   recipe-maintainers:
