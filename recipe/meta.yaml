@@ -18,12 +18,11 @@ build:
 
 requirements:
   build:
-    ## it actually does need tensorflow to build, but conda complains that it depends on itself
-    # - tensorflow-estimator
+    ## Needs tensorflow to build, but conda complains that it depends on itself -- see build.sh
+    # - tensorflow
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}    
     - python
-    - mamba
     - bazel
     - setuptools
     - wheel

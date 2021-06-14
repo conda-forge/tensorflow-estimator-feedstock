@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mamba install --quiet --yes tensorflow
+conda install --quiet --yes tensorflow
 
 set -ex
 
