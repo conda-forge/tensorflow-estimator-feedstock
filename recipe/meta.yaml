@@ -16,10 +16,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - absl-py >=0.7.0
     - astor >=0.6.0
     - gast >=0.2.0
