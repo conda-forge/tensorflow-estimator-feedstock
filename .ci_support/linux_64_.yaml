@@ -14,6 +14,8 @@ cxx_compiler_version:
 - '9'
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
+numpy:
+- '1.19'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -21,7 +23,7 @@ pin_run_as_build:
 python:
 - 3.9.* *_cpython
 zip_keys:
-- - c_compiler_version
+  - c_compiler_version
   - cxx_compiler_version
-- - cdt_name
+  - cdt_name
   - docker_image
