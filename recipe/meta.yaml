@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/tensorflow/estimator/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e6ea12014c3d8c89a81ace95f8f8b7c39ffcd3e4e4626709e4aee0010eefd962
+  sha256: 66661f30ea05d57377c45267ca770935fb8c54f85b7901f0a7deb91766fe9f45
 
 build:
   number: 1
