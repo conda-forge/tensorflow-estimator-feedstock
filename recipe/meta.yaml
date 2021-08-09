@@ -1,4 +1,4 @@
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
   name: tensorflow-estimator
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/tensorflow/estimator/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 66661f30ea05d57377c45267ca770935fb8c54f85b7901f0a7deb91766fe9f45
+  sha256: 947705c60c50da0b4a8ceec1bc058aaf6bf567a7efdcd50d5173ebf6bafcf30f
 
 build:
-  number: 1
+  number: 0
   noarch: python
   ignore_run_exports:
     - libgcc-ng
@@ -21,7 +21,7 @@ requirements:
     ## Needs tensorflow to build, but conda complains that it depends on itself -- see build.sh
     # - tensorflow
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}    
+    - {{ compiler('cxx') }}
     - python
     - bazel
     - setuptools
